@@ -1,7 +1,7 @@
 <?php
 $mysqli = include_once "bd.php";
 $resultado = $mysqli->query("SELECT id, nombre, foto FROM pokedex");
-$pokedexs = $resultado->fetch_all(MYSQLI_ASSOC);
+$pokedex = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,16 +38,16 @@ $pokedexs = $resultado->fetch_all(MYSQLI_ASSOC);
             <tbody>
             
                 <?php
-                foreach ($pokedexs as $pokedex) { ?>
+                foreach ($pokedex as $pokede) { ?>
                     <tr>
-                        <td><?php echo $pokedex["id"] ?>2332</td>
-                        <td><?php echo $pokedex["nombre"] ?>nombre</td>
-                        <td><?php echo $pokedex["foto"] ?>foto</td>
+                        <td><?php echo $pokede["id"] ?></td>
+                        <td><?php echo $pokede["nombre"] ?></td>
+                        <td><?php echo $pokede["foto"] ?></td>
                         <td>
-                            <a href="editar.php?id=<?php echo $pokedex["id"] ?>">Editar</a>
+                            <a href="Editar?id=<?php echo $pokede["id"] ?>">Editar</a>
                         </td>
                         <td>
-                            <a href="eliminar.php?id=<?php echo $pokedex["id"] ?>">Eliminar</a>
+                            <a href="Eliminar.php?id=<?php echo $pokede["id"] ?>">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>
